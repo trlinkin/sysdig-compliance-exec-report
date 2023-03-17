@@ -1,0 +1,4 @@
+bottle==0.12.25
+markdown2==2.4.8
+matplotlib==3.7.1
+pdfkit==1.0.0
