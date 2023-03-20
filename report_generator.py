@@ -18,6 +18,7 @@ from bottle import template
 
 TEMPLATES_DIR=f'{os.path.dirname(os.path.realpath(__file__))}/templates'
 DATE_PRETTY=datetime.today().strftime("%B %d, %Y at %H:%M %p %Z")
+FILE_DATE=datetime.now().strftime('%Y-%m-%d-%H-%M-%S')
 SDC_SECURE_TOKEN=os.environ.get('SDC_SECURE_TOKEN')
 SDC_SECURE_URL=os.environ.get('SDC_SECURE_URL')
 
@@ -158,7 +159,7 @@ def save_pdf(html):
         os.makedirs('reports')
         logging.warning('Reports dir did not exist, it has been created')    
 
-    pdfkit.from_string(html, 'reports/{}-report.pdf'.format(datetime.now().strftime('%Y-%m-%d-%H-%M-%S')), options=options, css="templates/report.css")
+    pdfkit.from_string(html, 'reports/{}-report.pdf'.format(FILE_DATE), options=options, css="templates/report.css")
 
 
 def main(zone, policies, secure_url, secure_token):
