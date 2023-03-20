@@ -37,7 +37,7 @@ Overall, this policy is passing  **{{ int(100 * len(data[policy]['pass']) / (len
         % end
 </div>
     % else:
-This Policy does not currently have any passing requirements, please see failure summary below.
+**This Policy does not currently have any passing requirements, please see failure summary below.**
     % end
 
 
